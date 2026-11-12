@@ -103,3 +103,7 @@ PRODUCT_MODEL := Mi PAD 4 (AOSP)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
+# MindTheGapps (opt-in): build with WITH_GMS=true and vendor/gapps synced
+ifeq ($(WITH_GMS),true)
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+endif
